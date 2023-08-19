@@ -10,7 +10,7 @@ class TodoSeeder extends Seeder {
    */
   public function run(): void {
     // factory(App\Todo::class, 10)->create();
-    App\Todo::factory()
+    Seeder::factory(App\Todo::class, 10)
       ->create();
   }
 }

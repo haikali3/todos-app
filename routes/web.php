@@ -17,6 +17,6 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-// Route::get('about', [AboutController::class, 'index']);
-// Route::get('about', 'App\Http\Controllers\AboutController@index');
 Route::get('todos', 'App\Http\Controllers\TodosController@index');
+
+Route::get('todos/{todo}', 'App\Http\Controllers\TodosController@show');

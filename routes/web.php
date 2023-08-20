@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('todos', 'App\Http\Controllers\TodosController@index');
 
 Route::get('todos/{todo}', 'App\Http\Controllers\TodosController@show');
+
+Route::get('new-todos', 'App\Http\Controllers\TodosController@create');
+
+Route::post('store-todos', 'App\Http\Controllers\TodosController@store');

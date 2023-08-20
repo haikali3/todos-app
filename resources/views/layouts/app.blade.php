@@ -21,14 +21,15 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/todos">todos</a>
                   </li>
-
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/new-todos">Create todos</a>
+                  </li>
                 </ul>
-
               </div>
             </div>
-          </nav>
-        <div class="container">
-            @yield('content')
-        </div>
+        </nav>
+            <div class="container">
+                @yield('content')
+            </div>
     </body>
 </html>

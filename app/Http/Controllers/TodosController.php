@@ -25,6 +25,12 @@ class TodosController extends Controller {
   }
 
   public function store() {
+
+    $this->validate(request(), [ //erorr validator
+      'name'        => 'required|min:6|max:12',
+      'description' => 'required',
+    ]);
+
     $data = request()->all(); //gets all the data from the submitted form. It's using the request() function to retrieve the data that was sent as part of the HTTP request.
 
     $todo              = new Todo(); // Create a new Todo object

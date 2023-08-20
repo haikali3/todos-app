@@ -40,6 +40,8 @@ class TodosController extends Controller {
 
     $todo->save(); // Save the Todo object to the database
 
+    session()->flash('success', 'Todo created successfully.');
+
     return redirect('/todos'); // Redirect to the 'todos' page after saving
   }
 
@@ -62,11 +64,24 @@ class TodosController extends Controller {
 
     $todo->save();
 
+    session()->flash('success', 'Todo updated successfully.');
+
     return redirect('/todos');
   }
 
   public function destroy(Todo $todo) {
     $todo->delete();
+
+    session()->flash('success', 'Todo deleted successfully.');
+
+    return redirect('/todos');
+  }
+
+  public function complete(Todo $todo) {
+    $todo->completed = true;
+    $todo->save();
+
+    session()->flash('success', 'Todo has been completed.');
 
     return redirect('/todos');
   }
